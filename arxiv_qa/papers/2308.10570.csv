@@ -1,0 +1,41 @@
+paper_id,model,question,answer
+2308.1057,claude-2.0,What is the central research question or hypothesis that this paper addresses?," The central research question this paper addresses is: 
+
+What is causing the failure of dense attention mechanisms in DETR-based models for temporal action detection (TAD), and how can this issue be resolved?
+
+The key points are:
+
+- The paper identifies a problem they term ""temporal collapse"" in the self-attention modules of DETR-based models for TAD. 
+
+- This temporal collapse leads the self-attention modules to play no effective role in the model, degrading performance.
+
+- The paper proposes a new framework called Self-DETR that provides feedback to the self-attention modules from the encoder-decoder cross-attention. 
+
+- This feedback guidance resolves the temporal collapse issue by retaining diversity in the self-attention and improving model performance.
+
+So in summary, the main research question is identifying the cause of poor performance of DETR models in TAD (temporal collapse in self-attention), and proposing a solution (Self-DETR with self-feedback guidance) to address this issue."
+2308.1057,claude-2.0,What is the main contribution of this paper?," The main contributions of this paper are:
+
+1. It identifies the temporal collapse problem of standard self-attention in DETR-based models for temporal action detection (TAD). It points out that the core issue lies in the self-attention modules of both the encoder and decoder. 
+
+2. It proposes a new framework called Self-DETR that provides feedback to the self-attention modules from the encoder-decoder cross-attention to prevent temporal collapse. It uses the cross-attention maps to produce guidance maps for the encoder and decoder self-attention.
+
+3. It demonstrates through experiments that Self-DETR effectively resolves the temporal collapse issue by maintaining high diversity in attention. It achieves new state-of-the-art performance on THUMOS14 and outperforms prior DETR-based methods on ActivityNet-v1.3.
+
+In summary, the key contribution is identifying the temporal collapse problem in self-attention for DETR-based TAD models, and proposing a simple yet effective Self-DETR framework to guide the self-attention using cross-attention maps to alleviate this problem. The improved performance verifies the effectiveness of the proposed approach."
+2308.1057,claude-2.0,"What is the TL;DR (Too Long, Didn't Read) version of the paper? If you had to summarize it in one sentence, what would that be?"," Here is a one sentence summary of the paper:
+
+The paper proposes a new framework called Self-DETR that resolves the issue of temporal collapse in the self-attention modules of DETR-based models for temporal action detection, and achieves state-of-the-art performance on THUMOS14 and improved performance over prior DETR methods on ActivityNet."
+2308.10570,claude-2.0,How does this paper compare to other research in the same field?," Here are a few key points about how this paper compares to other related research:
+
+- This paper focuses specifically on improving DETR-based models for temporal action detection (TAD), which is an important but challenging task for video understanding. Several other recent papers have also explored adapting DETR for TAD, but this paper points out a key issue with the self-attention mechanism in DETR models that hurts performance on TAD. 
+
+- The paper clearly defines the ""temporal collapse"" problem they identify with standard self-attention in DETR models for TAD. Other papers have noted issues like over-smoothing, but this paper argues temporal collapse is more serious and fundamental. Their analysis and experiments back up this claim.
+
+- To address the temporal collapse problem, the paper proposes a novel self-feedback framework to guide the self-attention modules using cross-attention. This differs from prior works that used deformable attention or other modifications to self-attention. The proposed method keeps the standard self-attention design but adds guidance.
+
+- The experiments on THUMOS14 and ActivityNet show state-of-the-art results for DETR-based models on TAD. The performance gains, especially on THUMOS14, demonstrate the effectiveness of the self-feedback approach compared to prior DETR modifications.
+
+- Overall, a key contribution is comprehensively analyzing the issues with self-attention for DETR on TAD, identifying temporal collapse as the core problem, and addressing it with a simple but well-motivated self-feedback framework that achieves new state-of-the-art DETR performance. The insights and approach differentiate this work from related literature.
+
+In summary, the paper provides useful analysis of limitations of DETR for TAD, proposes a novel solution targeting the core issue, and achieves strong empirical results demonstrating the impact of their approach compared to prior art. The work represents an advance in adapting DETR models for the important task of temporal action detection."
